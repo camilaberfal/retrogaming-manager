@@ -14,7 +14,7 @@ public class RetroGamingManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hola");
+        // TODO code application logic here
     }
     
 }
