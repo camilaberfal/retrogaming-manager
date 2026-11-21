@@ -1,19 +1,17 @@
-
 # NetBeans private configuration
-/nbproject/private/
+/RetroGamingManager/nbproject/private/
 
-# Java build files
-/build/
-/dist/
-/nbbuild/
-/nbdist/
+# NetBeans build and distribution
+/RetroGamingManager/build/
+/RetroGamingManager/dist/
+/RetroGamingManager/nbbuild/
+/RetroGamingManager/nbdist/
 
 # Maven
 /target/
 
 # Gradle
 /.gradle/
-/build/
 
 # Compiled files
 *.class
@@ -28,4 +26,3 @@ Thumbs.db
 # IDE-specific folders
 .idea/
 .vscode/
-/RetroGamingManager/nbproject/private/
