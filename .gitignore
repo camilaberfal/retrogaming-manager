@@ -1,0 +1,30 @@
+
+# NetBeans private configuration
+/nbproject/private/
+
+# Java build files
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+
+# Maven
+/target/
+
+# Gradle
+/.gradle/
+/build/
+
+# Compiled files
+*.class
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE-specific folders
+.idea/
+.vscode/
