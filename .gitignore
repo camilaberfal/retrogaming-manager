@@ -28,3 +28,4 @@ Thumbs.db
 # IDE-specific folders
 .idea/
 .vscode/
+/RetroGamingManager/nbproject/private/
