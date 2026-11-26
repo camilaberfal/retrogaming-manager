@@ -5,72 +5,40 @@ package retrogamingmanager;
  * @author camila
  */
 
-public class GestionEmpleados {
-    private Empleado[] empleados;
-    private int cont;
-
+public class GestionEmpleados extends GestionPersonas {
     public GestionEmpleados() {
-        empleados = new Empleado[50];
-        cont = 0;
+        super(new Empleado[50], "empleado");
     }
 
     public Empleado obtenerEmpleado(int indice) {
-        return empleados[indice];
+        return (Empleado) personas[indice];
     }
 
-    public int buscarEmpleadoPorDni(String dni) {
-        for (int i = 0; i < cont; i++) {
-            if (empleados[i].getDni().equals(dni)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    
-    private String normalizarRol(String rol) {
-        if ("Administrador".equals(rol) || "administrador".equals(rol) || "ADMINISTRADOR".equals(rol)) {
-            return "Administrador";
-        }
-        if ("Vendedor".equals(rol) || "vendedor".equals(rol) || "VENDEDOR".equals(rol)) {
-            return "Vendedor";
-        }
-        if ("Almacenero".equals(rol) || "almacenero".equals(rol) || "ALMACENERO".equals(rol)) {
-            return "Almacenero";
-        }
-        return "Invalido";
-    }
-    
     public String registrarEmpleado(String dni, String nombres, String apellidos, String usuario, String contrasena, String rol) {
         if ("".equals(dni) || "".equals(nombres) || "".equals(apellidos) || "".equals(usuario) || "".equals(contrasena)) {
             return "Completa todos los campos.";
         }
 
-        rol = normalizarRol(rol);
-        if ("Invalido".equals(rol)) {
-            return "Selecciona un rol válido.";
+        if (buscar(dni) != -1) {
+            return "Ya existe un empleado con ese DNI.";
         }
 
         for (int i = 0; i < cont; i++) {
-            if (empleados[i].getDni().equals(dni)) {
-                return "Ya existe un empleado con ese DNI.";
-            }
-
-            if (empleados[i].getUsuario().equals(usuario)) {
+            if (obtenerEmpleado(i).getUsuario().equals(usuario)) {
                 return "Ya existe un empleado con ese usuario.";
             }
         }
 
-        if (cont == empleados.length) {
+        if (estaLleno()) {
             return "El registro de empleados está lleno.";
         }
 
-        empleados[cont] = new Empleado(usuario, contrasena, rol, dni, nombres, apellidos);
-        cont++;
+        agregar(new Empleado(usuario, contrasena, rol, dni, nombres, apellidos));
         return "Exitoso";
     }
     
     public String modificarEmpleado(int indice, String dni, String nombres, String apellidos, String usuario, String contrasena, String rol) {
-        if (indice < 0 || indice >= cont) {
+        if (!indiceValido(indice)) {
             return "Selecciona un empleado para modificar.";
         }
 
@@ -78,43 +46,25 @@ public class GestionEmpleados {
             return "Completa todos los campos.";
         }
 
-        rol = normalizarRol(rol);
-        if ("Invalido".equals(rol)) {
-            return "Selecciona un rol válido.";
+        if (buscar(dni, indice) != -1) {
+            return "Ya existe un empleado con ese DNI.";
         }
 
         for (int i = 0; i < cont; i++) {
-            if (i != indice && empleados[i].getDni().equals(dni)) {
-                return "Ya existe un empleado con ese DNI.";
-            }
-            if (i != indice && empleados[i].getUsuario().equals(usuario)) {
+            if (i != indice && obtenerEmpleado(i).getUsuario().equals(usuario)) {
                 return "Ya existe un empleado con ese usuario.";
             }
         }
 
-        empleados[indice] = new Empleado(usuario, contrasena, rol, dni, nombres, apellidos);
-        return "Exitoso";
-    }
-    
-    public String eliminarEmpleado(int indice) {
-        if (indice < 0 || indice >= cont) {
-            return "Selecciona un empleado para eliminar.";
-        }
-
-        for (int i = indice; i < cont - 1; i++) {
-            empleados[i] = empleados[i + 1];
-        }
-
-        cont--;
-        empleados[cont] = null;
+        obtenerEmpleado(indice).actualizarDatos(dni, nombres, apellidos, usuario, contrasena, rol);
         return "Exitoso";
     }
     
     public Empleado autenticar(String usuario, String contrasena) {
         for (int i = 0; i < cont; i++) {
-            Empleado empleado = empleados[i];
+            Empleado empleado = obtenerEmpleado(i);
 
-            if (empleado.getUsuario().equals(usuario) && empleado.getContrasena().equals(contrasena)) {
+            if (empleado.coincidenCredenciales(usuario, contrasena)) {
                 return empleado;
             }
         }
@@ -123,19 +73,11 @@ public class GestionEmpleados {
     }
 
     public Empleado[] getEmpleados() {
-        return empleados;
+        return (Empleado[]) personas;
     }
 
     public void setEmpleados(Empleado[] empleados) {
-        this.empleados = empleados;
-    }
-
-    public int getCont() {
-        return cont;
-    }
-
-    public void setCont(int cont) {
-        this.cont = cont;
+        this.personas = empleados;
     }
     
 }

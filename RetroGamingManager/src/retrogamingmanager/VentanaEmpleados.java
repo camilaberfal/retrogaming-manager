@@ -410,7 +410,7 @@ public class VentanaEmpleados extends javax.swing.JFrame {
                 return;
             }
 
-            indice = gestionEmpleados.buscarEmpleadoPorDni(dniBusqueda);
+            indice = gestionEmpleados.buscar(dniBusqueda);
             if (indice == -1) {
                 JOptionPane.showMessageDialog(this, "No se encontró un empleado con ese DNI.");
                 return;
@@ -420,7 +420,7 @@ public class VentanaEmpleados extends javax.swing.JFrame {
         String mensaje;
 
         if (btnEliminar.isSelected()) {
-            mensaje = gestionEmpleados.eliminarEmpleado(indice);
+            mensaje = gestionEmpleados.eliminar(indice);
         } else {
             String dni = txtDni.getText();
             String nombres = txtNombres.getText();
@@ -430,11 +430,9 @@ public class VentanaEmpleados extends javax.swing.JFrame {
             String rol = (String) cmbRol.getSelectedItem();
 
             if (btnRegistrar.isSelected()) {
-                mensaje = gestionEmpleados.registrarEmpleado(
-                        dni, nombres, apellidos, usuario, contrasena, rol);
+                mensaje = gestionEmpleados.registrarEmpleado(dni, nombres, apellidos, usuario, contrasena, rol);
             } else {
-                mensaje = gestionEmpleados.modificarEmpleado(
-                        indice, dni, nombres, apellidos, usuario, contrasena, rol);
+                mensaje = gestionEmpleados.modificarEmpleado(indice, dni, nombres, apellidos, usuario, contrasena, rol);
             }
         }
 

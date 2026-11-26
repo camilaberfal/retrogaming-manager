@@ -14,6 +14,15 @@ public class RetroGamingManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        GestionEmpleados gestionEmpleados = new GestionEmpleados();
+
+        gestionEmpleados.registrarEmpleado(
+                "12345678", "Ana", "Torres", "admin", "demo123", "Vendedor");
+
+        java.awt.EventQueue.invokeLater(() -> {
+            VentanaLogin ventana = new VentanaLogin(gestionEmpleados);
+            ventana.setVisible(true);
+        });
     }
     
 }

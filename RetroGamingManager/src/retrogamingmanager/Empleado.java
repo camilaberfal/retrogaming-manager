@@ -15,6 +15,16 @@ public class Empleado extends Persona {
         this.rol = rol;
     }
 
+
+    public void actualizarDatos(String dni, String nombres, String apellidos, String usuario, String contrasena, String rol) {
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.rol = rol;
+    }
+
     public String getUsuario() {
         return usuario;
     }
@@ -38,6 +48,10 @@ public class Empleado extends Persona {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    
-    
+
+    public boolean coincidenCredenciales(String usuario, String contrasena) {
+        return usuario != null && usuario.equals(this.usuario)
+                && contrasena != null && contrasena.equals(this.contrasena);
+    }
+
 }
