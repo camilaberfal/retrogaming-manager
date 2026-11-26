@@ -17,6 +17,15 @@ public class GestionEmpleados {
     public Empleado obtenerEmpleado(int indice) {
         return empleados[indice];
     }
+
+    public int buscarEmpleadoPorDni(String dni) {
+        for (int i = 0; i < cont; i++) {
+            if (empleados[i].getDni().equals(dni)) {
+                return i;
+            }
+        }
+        return -1;
+    }
     
     private String normalizarRol(String rol) {
         if ("Administrador".equals(rol) || "administrador".equals(rol) || "ADMINISTRADOR".equals(rol)) {
