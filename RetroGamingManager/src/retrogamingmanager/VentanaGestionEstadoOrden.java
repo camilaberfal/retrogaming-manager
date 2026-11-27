@@ -177,6 +177,15 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
+        tblHistorial.setBackground(new java.awt.Color(25, 24, 22));
+        tblHistorial.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tblHistorial.setForeground(new java.awt.Color(252, 245, 224));
+        tblHistorial.setFillsViewportHeight(true);
+        tblHistorial.setGridColor(new java.awt.Color(57, 49, 38));
+        tblHistorial.setRowHeight(24);
+        tblHistorial.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tblHistorial.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tblHistorial);
         tblHistorial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
