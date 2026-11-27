@@ -51,14 +51,29 @@ public class VentanaClientes extends javax.swing.JFrame {
 
         lblDni = new javax.swing.JLabel();
         txtDni = new javax.swing.JTextField();
+        txtDni.setBackground(new java.awt.Color(251, 237, 197));
+        txtDni.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtDni.setForeground(new java.awt.Color(23, 20, 13));
         lblNombres = new javax.swing.JLabel();
         txtNombres = new javax.swing.JTextField();
+        txtNombres.setBackground(new java.awt.Color(251, 237, 197));
+        txtNombres.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtNombres.setForeground(new java.awt.Color(23, 20, 13));
         lblApellidos = new javax.swing.JLabel();
         txtApellidos = new javax.swing.JTextField();
+        txtApellidos.setBackground(new java.awt.Color(251, 237, 197));
+        txtApellidos.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtApellidos.setForeground(new java.awt.Color(23, 20, 13));
         lblTelefono = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
+        txtTelefono.setBackground(new java.awt.Color(251, 237, 197));
+        txtTelefono.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(23, 20, 13));
         lblCorreo = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
+        txtCorreo.setBackground(new java.awt.Color(251, 237, 197));
+        txtCorreo.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(23, 20, 13));
         btnRegistrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -66,90 +81,121 @@ public class VentanaClientes extends javax.swing.JFrame {
         btnCompra = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblDni.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblDni.setForeground(new java.awt.Color(252, 245, 224));
         lblDni.setText("DNI:");
-        getContentPane().add(lblDni);
-        lblDni.setBounds(20, 20, 100, 25);
+        getContentPane().add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 25));
+        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 200, 25));
 
-        getContentPane().add(txtDni);
-        txtDni.setBounds(130, 20, 200, 25);
-
+        lblNombres.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblNombres.setForeground(new java.awt.Color(252, 245, 224));
         lblNombres.setText("Nombres:");
-        getContentPane().add(lblNombres);
-        lblNombres.setBounds(20, 55, 100, 25);
+        getContentPane().add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 55, 100, 25));
+        getContentPane().add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 55, 200, 25));
 
-        getContentPane().add(txtNombres);
-        txtNombres.setBounds(130, 55, 200, 25);
-
+        lblApellidos.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblApellidos.setForeground(new java.awt.Color(252, 245, 224));
         lblApellidos.setText("Apellidos:");
-        getContentPane().add(lblApellidos);
-        lblApellidos.setBounds(20, 90, 100, 25);
+        getContentPane().add(lblApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 100, 25));
+        getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 200, 25));
 
-        getContentPane().add(txtApellidos);
-        txtApellidos.setBounds(130, 90, 200, 25);
-
+        lblTelefono.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(252, 245, 224));
         lblTelefono.setText("Teléfono:");
-        getContentPane().add(lblTelefono);
-        lblTelefono.setBounds(400, 20, 100, 25);
+        getContentPane().add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 100, 25));
+        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 200, 25));
 
-        getContentPane().add(txtTelefono);
-        txtTelefono.setBounds(480, 20, 200, 25);
-
+        lblCorreo.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblCorreo.setForeground(new java.awt.Color(252, 245, 224));
         lblCorreo.setText("Correo:");
-        getContentPane().add(lblCorreo);
-        lblCorreo.setBounds(400, 55, 100, 25);
+        getContentPane().add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 55, 100, 25));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 55, 200, 25));
 
-        getContentPane().add(txtCorreo);
-        txtCorreo.setBounds(480, 55, 200, 25);
-
+        btnRegistrar.setBackground(new java.awt.Color(253, 216, 24));
+        btnRegistrar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(23, 20, 13));
+        btnRegistrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.setContentAreaFilled(false);
+        btnRegistrar.setOpaque(true);
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar);
-        btnRegistrar.setBounds(20, 135, 110, 30);
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 135, 110, 30));
 
+        btnModificar.setBackground(new java.awt.Color(25, 24, 22));
+        btnModificar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(252, 245, 224));
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setContentAreaFilled(false);
+        btnModificar.setOpaque(true);
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModificar);
-        btnModificar.setBounds(140, 135, 110, 30);
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 135, 110, 30));
 
+        btnEliminar.setBackground(new java.awt.Color(25, 24, 22));
+        btnEliminar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(252, 245, 224));
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setOpaque(true);
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(260, 135, 110, 30);
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 135, 110, 30));
 
+        btnLimpiar.setBackground(new java.awt.Color(25, 24, 22));
+        btnLimpiar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(252, 245, 224));
+        btnLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLimpiar.setContentAreaFilled(false);
+        btnLimpiar.setOpaque(true);
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLimpiar);
-        btnLimpiar.setBounds(380, 135, 110, 30);
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 135, 110, 30));
 
+        btnCompra.setBackground(new java.awt.Color(25, 24, 22));
+        btnCompra.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnCompra.setForeground(new java.awt.Color(252, 245, 224));
+        btnCompra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCompra.setContentAreaFilled(false);
+        btnCompra.setOpaque(true);
         btnCompra.setText("Registrar compra finalizada");
         btnCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompraActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCompra);
-        btnCompra.setBounds(500, 135, 220, 30);
+        getContentPane().add(btnCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 135, 220, 30));
 
+        tblClientes.setBackground(new java.awt.Color(25, 24, 22));
+        tblClientes.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tblClientes.setForeground(new java.awt.Color(252, 245, 224));
+        tblClientes.setFillsViewportHeight(true);
+        tblClientes.setGridColor(new java.awt.Color(57, 49, 38));
+        tblClientes.setRowHeight(24);
+        tblClientes.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tblClientes.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tblClientes);
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -171,12 +217,16 @@ public class VentanaClientes extends javax.swing.JFrame {
                 tblClientesMouseClicked(evt);
             }
         });
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(jScrollPane1);
         jScrollPane1.setViewportView(tblClientes);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 185, 840, 300);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 185, 840, 300));
 
-        setSize(new java.awt.Dimension(900, 550));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/empleados-clientes.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
@@ -267,6 +317,7 @@ public class VentanaClientes extends javax.swing.JFrame {
     private javax.swing.JLabel lblApellidos;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblDni;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JTable tblClientes;

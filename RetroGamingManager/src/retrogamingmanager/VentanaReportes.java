@@ -25,13 +25,8 @@ public class VentanaReportes extends javax.swing.JFrame {
     private void mostrarReportes() {
         Fecha desde;
         Fecha hasta;
-        try {
             desde = leerFecha(txtDesde.getText());
             hasta = leerFecha(txtHasta.getText());
-        } catch (IllegalArgumentException error) {
-            JOptionPane.showMessageDialog(this, "Escribe fechas válidas en formato dd/mm/aaaa.");
-            return;
-        }
 
         if (desde.enDias() > hasta.enDias()) {
             JOptionPane.showMessageDialog(this, "La fecha Desde debe ser anterior o igual a Hasta.");
@@ -72,8 +67,14 @@ public class VentanaReportes extends javax.swing.JFrame {
 
         lblDesde = new javax.swing.JLabel();
         txtDesde = new javax.swing.JTextField();
+        txtDesde.setBackground(new java.awt.Color(251, 237, 197));
+        txtDesde.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtDesde.setForeground(new java.awt.Color(23, 20, 13));
         lblHasta = new javax.swing.JLabel();
         txtHasta = new javax.swing.JTextField();
+        txtHasta.setBackground(new java.awt.Color(251, 237, 197));
+        txtHasta.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtHasta.setForeground(new java.awt.Color(23, 20, 13));
         btnGenerar = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
         scrollReportes = new javax.swing.JScrollPane();
@@ -91,43 +92,63 @@ public class VentanaReportes extends javax.swing.JFrame {
         scrollIngresos = new javax.swing.JScrollPane();
         tablaIngresos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setTitle("Reportes gerenciales");
-        setMaximumSize(new java.awt.Dimension(700, 650));
-        setMinimumSize(new java.awt.Dimension(700, 650));
-        setPreferredSize(new java.awt.Dimension(680, 570));
         setResizable(false);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblDesde.setFont(new java.awt.Font("Poppins Medium", 0, 11)); // NOI18N
+        lblDesde.setForeground(new java.awt.Color(252, 245, 224));
         lblDesde.setText("Desde (dd/mm/aaaa)");
-        getContentPane().add(lblDesde);
-        lblDesde.setBounds(40, 100, 115, 26);
-        getContentPane().add(txtDesde);
-        txtDesde.setBounds(160, 100, 100, 26);
+        getContentPane().add(lblDesde, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 100, 130, 26));
+        getContentPane().add(txtDesde, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, 26));
 
+        lblHasta.setFont(new java.awt.Font("Poppins Medium", 0, 11)); // NOI18N
+        lblHasta.setForeground(new java.awt.Color(252, 245, 224));
         lblHasta.setText("Hasta (dd/mm/aaaa)");
-        getContentPane().add(lblHasta);
-        lblHasta.setBounds(270, 100, 115, 26);
-        getContentPane().add(txtHasta);
-        txtHasta.setBounds(390, 100, 100, 26);
+        getContentPane().add(lblHasta, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 100, 130, 26));
+        getContentPane().add(txtHasta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 100, 26));
 
+        btnGenerar.setBackground(new java.awt.Color(253, 216, 24));
+        btnGenerar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnGenerar.setForeground(new java.awt.Color(23, 20, 13));
+        btnGenerar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGenerar.setContentAreaFilled(false);
+        btnGenerar.setOpaque(true);
         btnGenerar.setText("Generar reportes");
         btnGenerar.addActionListener(this::generarActionPerformed);
-        getContentPane().add(btnGenerar);
-        btnGenerar.setBounds(510, 100, 145, 26);
+        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 145, 26));
 
+        btnCerrar.setBackground(new java.awt.Color(46, 38, 12));
+        btnCerrar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(253, 216, 24));
+        btnCerrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setOpaque(true);
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(this::cerrarActionPerformed);
-        getContentPane().add(btnCerrar);
-        btnCerrar.setBounds(570, 570, 80, 28);
+        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, 80, 28));
 
+        panelReportes.setBackground(new java.awt.Color(33, 29, 24));
         panelReportes.setPreferredSize(new java.awt.Dimension(590, 880));
         panelReportes.setLayout(null);
 
+        lblRotacion.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        lblRotacion.setForeground(new java.awt.Color(253, 216, 24));
         lblRotacion.setText("Rotación por categoría");
         panelReportes.add(lblRotacion);
         lblRotacion.setBounds(10, 10, 570, 25);
 
+        tablaRotacion.setBackground(new java.awt.Color(25, 24, 22));
+        tablaRotacion.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tablaRotacion.setForeground(new java.awt.Color(252, 245, 224));
+        tablaRotacion.setFillsViewportHeight(true);
+        tablaRotacion.setGridColor(new java.awt.Color(57, 49, 38));
+        tablaRotacion.setRowHeight(24);
+        tablaRotacion.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tablaRotacion.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tablaRotacion);
         tablaRotacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -144,15 +165,28 @@ public class VentanaReportes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        scrollRotacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrollRotacion);
         scrollRotacion.setViewportView(tablaRotacion);
 
         panelReportes.add(scrollRotacion);
         scrollRotacion.setBounds(10, 38, 565, 180);
 
+        lblProductividad.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        lblProductividad.setForeground(new java.awt.Color(253, 216, 24));
         lblProductividad.setText("Productividad del personal");
         panelReportes.add(lblProductividad);
         lblProductividad.setBounds(10, 228, 570, 25);
 
+        tablaProductividad.setBackground(new java.awt.Color(25, 24, 22));
+        tablaProductividad.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tablaProductividad.setForeground(new java.awt.Color(252, 245, 224));
+        tablaProductividad.setFillsViewportHeight(true);
+        tablaProductividad.setGridColor(new java.awt.Color(57, 49, 38));
+        tablaProductividad.setRowHeight(24);
+        tablaProductividad.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tablaProductividad.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tablaProductividad);
         tablaProductividad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -169,15 +203,28 @@ public class VentanaReportes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        scrollProductividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrollProductividad);
         scrollProductividad.setViewportView(tablaProductividad);
 
         panelReportes.add(scrollProductividad);
         scrollProductividad.setBounds(10, 256, 565, 180);
 
+        lblClientes.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        lblClientes.setForeground(new java.awt.Color(253, 216, 24));
         lblClientes.setText("Clientes con más compras");
         panelReportes.add(lblClientes);
         lblClientes.setBounds(10, 446, 570, 25);
 
+        tablaClientes.setBackground(new java.awt.Color(25, 24, 22));
+        tablaClientes.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tablaClientes.setForeground(new java.awt.Color(252, 245, 224));
+        tablaClientes.setFillsViewportHeight(true);
+        tablaClientes.setGridColor(new java.awt.Color(57, 49, 38));
+        tablaClientes.setRowHeight(24);
+        tablaClientes.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tablaClientes.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tablaClientes);
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -194,15 +241,28 @@ public class VentanaReportes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        scrollClientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrollClientes);
         scrollClientes.setViewportView(tablaClientes);
 
         panelReportes.add(scrollClientes);
         scrollClientes.setBounds(10, 474, 565, 180);
 
+        lblIngresos.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        lblIngresos.setForeground(new java.awt.Color(253, 216, 24));
         lblIngresos.setText("Ingresos por concepto");
         panelReportes.add(lblIngresos);
         lblIngresos.setBounds(10, 664, 570, 25);
 
+        tablaIngresos.setBackground(new java.awt.Color(25, 24, 22));
+        tablaIngresos.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tablaIngresos.setForeground(new java.awt.Color(252, 245, 224));
+        tablaIngresos.setFillsViewportHeight(true);
+        tablaIngresos.setGridColor(new java.awt.Color(57, 49, 38));
+        tablaIngresos.setRowHeight(24);
+        tablaIngresos.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tablaIngresos.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tablaIngresos);
         tablaIngresos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -219,21 +279,27 @@ public class VentanaReportes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        scrollIngresos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrollIngresos);
         scrollIngresos.setViewportView(tablaIngresos);
 
         panelReportes.add(scrollIngresos);
         scrollIngresos.setBounds(10, 692, 565, 180);
 
+        scrollReportes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrollReportes);
         scrollReportes.setViewportView(panelReportes);
 
-        getContentPane().add(scrollReportes);
-        scrollReportes.setBounds(40, 130, 615, 423);
+        getContentPane().add(scrollReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 615, 423));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(252, 245, 224));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Reportes Gerenciales");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 20, 700, 50);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 700, 50));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/reportes.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -252,6 +318,7 @@ public class VentanaReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblDesde;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblHasta;
     private javax.swing.JLabel lblIngresos;
     private javax.swing.JLabel lblProductividad;

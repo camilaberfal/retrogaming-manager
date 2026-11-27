@@ -71,18 +71,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnPreparacion = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(470, 420));
+        setTitle("Menú principal");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblBienvenida.setFont(new java.awt.Font("Poppins SemiBold", 0, 21)); // NOI18N
+        lblBienvenida.setForeground(new java.awt.Color(252, 245, 224));
         lblBienvenida.setText("Bienvenido");
+        getContentPane().add(lblBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 20, 405, 32));
 
+        lblRol.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblRol.setForeground(new java.awt.Color(253, 216, 24));
         lblRol.setText("Rol");
+        getContentPane().add(lblRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 54, 405, 22));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(420, 250));
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 8, 8));
 
+        btnEmpleados.setBackground(new java.awt.Color(25, 24, 22));
+        btnEmpleados.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnEmpleados.setForeground(new java.awt.Color(252, 245, 224));
         btnEmpleados.setText("Gestión de empleados");
-        btnEmpleados.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnEmpleados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEmpleados.setContentAreaFilled(false);
+        btnEmpleados.setOpaque(true);
+        btnEmpleados.setPreferredSize(new java.awt.Dimension(196, 38));
         btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmpleadosActionPerformed(evt);
@@ -90,8 +106,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnEmpleados);
 
+        btnClientes.setBackground(new java.awt.Color(25, 24, 22));
+        btnClientes.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnClientes.setForeground(new java.awt.Color(252, 245, 224));
         btnClientes.setText("Gestión de clientes");
-        btnClientes.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnClientes.setContentAreaFilled(false);
+        btnClientes.setOpaque(true);
+        btnClientes.setPreferredSize(new java.awt.Dimension(196, 38));
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientesActionPerformed(evt);
@@ -99,8 +121,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnClientes);
 
+        btnJuguetes.setBackground(new java.awt.Color(25, 24, 22));
+        btnJuguetes.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnJuguetes.setForeground(new java.awt.Color(252, 245, 224));
         btnJuguetes.setText("Juguetes");
-        btnJuguetes.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnJuguetes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnJuguetes.setContentAreaFilled(false);
+        btnJuguetes.setOpaque(true);
+        btnJuguetes.setPreferredSize(new java.awt.Dimension(196, 38));
         btnJuguetes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJuguetesActionPerformed(evt);
@@ -108,8 +136,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnJuguetes);
 
+        btnServicios.setBackground(new java.awt.Color(25, 24, 22));
+        btnServicios.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnServicios.setForeground(new java.awt.Color(252, 245, 224));
         btnServicios.setText("Servicios adicionales");
-        btnServicios.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnServicios.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnServicios.setContentAreaFilled(false);
+        btnServicios.setOpaque(true);
+        btnServicios.setPreferredSize(new java.awt.Dimension(196, 38));
         btnServicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnServiciosActionPerformed(evt);
@@ -117,8 +151,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnServicios);
 
+        btnNuevaOrden.setBackground(new java.awt.Color(25, 24, 22));
+        btnNuevaOrden.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnNuevaOrden.setForeground(new java.awt.Color(252, 245, 224));
         btnNuevaOrden.setText("Nueva orden");
-        btnNuevaOrden.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnNuevaOrden.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnNuevaOrden.setContentAreaFilled(false);
+        btnNuevaOrden.setOpaque(true);
+        btnNuevaOrden.setPreferredSize(new java.awt.Dimension(196, 38));
         btnNuevaOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPendienteActionPerformed(evt);
@@ -126,8 +166,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnNuevaOrden);
 
+        btnInventario.setBackground(new java.awt.Color(25, 24, 22));
+        btnInventario.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnInventario.setForeground(new java.awt.Color(252, 245, 224));
         btnInventario.setText("Consulta de inventario");
-        btnInventario.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnInventario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInventario.setContentAreaFilled(false);
+        btnInventario.setOpaque(true);
+        btnInventario.setPreferredSize(new java.awt.Dimension(196, 38));
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInventarioActionPerformed(evt);
@@ -135,16 +181,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnInventario);
 
+        btnSeguimiento.setBackground(new java.awt.Color(25, 24, 22));
+        btnSeguimiento.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnSeguimiento.setForeground(new java.awt.Color(252, 245, 224));
         btnSeguimiento.setText("Seguimiento de órdenes");
-        btnSeguimiento.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnSeguimiento.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSeguimiento.setContentAreaFilled(false);
+        btnSeguimiento.setOpaque(true);
+        btnSeguimiento.setPreferredSize(new java.awt.Dimension(196, 38));
         jPanel1.add(btnSeguimiento);
 
+        btnPreparacion.setBackground(new java.awt.Color(25, 24, 22));
+        btnPreparacion.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnPreparacion.setForeground(new java.awt.Color(252, 245, 224));
         btnPreparacion.setText("Preparación y entrega");
-        btnPreparacion.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnPreparacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPreparacion.setContentAreaFilled(false);
+        btnPreparacion.setOpaque(true);
+        btnPreparacion.setPreferredSize(new java.awt.Dimension(196, 38));
         jPanel1.add(btnPreparacion);
 
+        btnReportes.setBackground(new java.awt.Color(25, 24, 22));
+        btnReportes.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnReportes.setForeground(new java.awt.Color(252, 245, 224));
         btnReportes.setText("Reportes");
-        btnReportes.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnReportes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReportes.setContentAreaFilled(false);
+        btnReportes.setOpaque(true);
+        btnReportes.setPreferredSize(new java.awt.Dimension(196, 38));
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportesActionPerformed(evt);
@@ -152,8 +216,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnReportes);
 
+        btnCerrarSesion.setBackground(new java.awt.Color(46, 38, 12));
+        btnCerrarSesion.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(253, 216, 24));
         btnCerrarSesion.setText("Cerrar sesión");
-        btnCerrarSesion.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnCerrarSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.setOpaque(true);
+        btnCerrarSesion.setPreferredSize(new java.awt.Dimension(196, 38));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
@@ -161,29 +231,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnCerrarSesion);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRol, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(lblRol, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 82, 416, 238));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bg-pequeno.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
@@ -254,6 +307,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnReportes;
     private javax.swing.JButton btnSeguimiento;
     private javax.swing.JButton btnServicios;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBienvenida;
     private javax.swing.JLabel lblRol;

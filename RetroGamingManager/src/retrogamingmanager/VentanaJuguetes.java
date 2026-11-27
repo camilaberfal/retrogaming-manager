@@ -90,18 +90,28 @@ public class VentanaJuguetes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlContenido = new javax.swing.JPanel();
         lblCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+        txtNombre.setBackground(new java.awt.Color(251, 237, 197));
+        txtNombre.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(23, 20, 13));
         lblAnio = new javax.swing.JLabel();
         cboCategoria = new javax.swing.JComboBox<>();
         lblCategoria = new javax.swing.JLabel();
         txtAnio = new javax.swing.JTextField();
+        txtAnio.setBackground(new java.awt.Color(251, 237, 197));
+        txtAnio.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtAnio.setForeground(new java.awt.Color(23, 20, 13));
         lblPrecio = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
         lblStock = new javax.swing.JLabel();
         txtStock = new javax.swing.JTextField();
+        txtStock.setBackground(new java.awt.Color(251, 237, 197));
+        txtStock.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtStock.setForeground(new java.awt.Color(23, 20, 13));
         lblEstado = new javax.swing.JLabel();
         cboEstado = new javax.swing.JComboBox<>();
         btnBuscar = new javax.swing.JButton();
@@ -111,85 +121,154 @@ public class VentanaJuguetes extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gestión de Juguetes");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlContenido.setOpaque(false);
+
+        lblCodigo.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(252, 245, 224));
         lblCodigo.setText("Código");
 
+        txtCodigo.setBackground(new java.awt.Color(251, 237, 197));
+        txtCodigo.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(23, 20, 13));
         txtCodigo.addActionListener(this::txtCodigoActionPerformed);
 
+        lblNombre.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(252, 245, 224));
         lblNombre.setText("Nombre");
 
+        lblAnio.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblAnio.setForeground(new java.awt.Color(252, 245, 224));
         lblAnio.setText("Año de fabricación");
 
+        cboCategoria.setBackground(new java.awt.Color(251, 237, 197));
+        cboCategoria.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        cboCategoria.setForeground(new java.awt.Color(23, 20, 13));
         cboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Figura de Acción", "Consola Retro", "Juego de Mesa" }));
 
+        lblCategoria.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblCategoria.setForeground(new java.awt.Color(252, 245, 224));
         lblCategoria.setText("Categoría");
 
+        lblPrecio.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblPrecio.setForeground(new java.awt.Color(252, 245, 224));
         lblPrecio.setText("Precio base (S/)");
 
+        txtPrecio.setBackground(new java.awt.Color(251, 237, 197));
+        txtPrecio.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtPrecio.setForeground(new java.awt.Color(23, 20, 13));
         txtPrecio.addActionListener(this::txtPrecioActionPerformed);
 
+        lblStock.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblStock.setForeground(new java.awt.Color(252, 245, 224));
         lblStock.setText("Stock");
 
+        lblEstado.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblEstado.setForeground(new java.awt.Color(252, 245, 224));
         lblEstado.setText("Estado");
 
+        cboEstado.setBackground(new java.awt.Color(251, 237, 197));
+        cboEstado.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        cboEstado.setForeground(new java.awt.Color(23, 20, 13));
         cboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Disponible", "Vendido", "En Restauración" }));
 
+        btnBuscar.setBackground(new java.awt.Color(25, 24, 22));
+        btnBuscar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(252, 245, 224));
+        btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBuscar.setContentAreaFilled(false);
+        btnBuscar.setOpaque(true);
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
 
+        btnModificar.setBackground(new java.awt.Color(25, 24, 22));
+        btnModificar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(252, 245, 224));
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setContentAreaFilled(false);
+        btnModificar.setOpaque(true);
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(this::btnModificarActionPerformed);
 
+        btnEliminar.setBackground(new java.awt.Color(25, 24, 22));
+        btnEliminar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(252, 245, 224));
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setOpaque(true);
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(this::btnEliminarActionPerformed);
 
+        btnVerJuguetes.setBackground(new java.awt.Color(25, 24, 22));
+        btnVerJuguetes.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnVerJuguetes.setForeground(new java.awt.Color(252, 245, 224));
+        btnVerJuguetes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVerJuguetes.setContentAreaFilled(false);
+        btnVerJuguetes.setOpaque(true);
         btnVerJuguetes.setText("Ver juguetes registrados");
         btnVerJuguetes.addActionListener(this::btnVerJuguetesActionPerformed);
 
+        btnRegistrar.setBackground(new java.awt.Color(253, 216, 24));
+        btnRegistrar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(23, 20, 13));
+        btnRegistrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.setContentAreaFilled(false);
+        btnRegistrar.setOpaque(true);
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
+        jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(252, 245, 224));
         jLabel1.setText("GESTIÓN DE JUGUETES");
 
+        btnLimpiar.setBackground(new java.awt.Color(25, 24, 22));
+        btnLimpiar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(252, 245, 224));
+        btnLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLimpiar.setContentAreaFilled(false);
+        btnLimpiar.setOpaque(true);
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEstado)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(txtPrecio, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(cboCategoria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lblCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(lblPrecio))
                                 .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblStock)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblAnio)
                                     .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(cboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(pnlContenidoLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -198,43 +277,43 @@ public class VentanaJuguetes extends javax.swing.JFrame {
                                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(240, 240, 240)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(163, 163, 163)
                         .addComponent(btnVerJuguetes)
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpiar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
                     .addComponent(lblNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCategoria)
                     .addComponent(lblAnio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrecio)
                     .addComponent(lblStock))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
@@ -242,17 +321,22 @@ public class VentanaJuguetes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar)
                     .addComponent(btnRegistrar))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVerJuguetes)
                     .addComponent(btnLimpiar))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
+
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 531, 573));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/juguetes.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -413,9 +497,11 @@ public class VentanaJuguetes extends javax.swing.JFrame {
     private javax.swing.JLabel lblCategoria;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblStock;
+    private javax.swing.JPanel pnlContenido;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtNombre;

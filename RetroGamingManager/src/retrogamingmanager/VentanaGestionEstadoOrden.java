@@ -165,31 +165,57 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnEjecutar = new javax.swing.JButton();
         txtNumeroCorrelativo = new javax.swing.JTextField();
+        txtNumeroCorrelativo.setBackground(new java.awt.Color(251, 237, 197));
+        txtNumeroCorrelativo.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtNumeroCorrelativo.setForeground(new java.awt.Color(23, 20, 13));
         btnAdelanto = new javax.swing.JRadioButton();
         btnCancelacion = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         tblHistorial.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {},
-            new String [] {"N.º", "Estado", "Empleado", "Acción"}
+            new Object [][] {
+
+            },
+            new String [] {
+                "N.º", "Estado", "Empleado", "Acción"
+            }
         ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return false;
+                return canEdit [columnIndex];
             }
         });
         tblHistorial.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gestión del estado de la orden");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        pnlOrdenes.setOpaque(false);
+
+        jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(252, 245, 224));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gestión del estado de la orden");
 
+        tblOrdenes.setBackground(new java.awt.Color(25, 24, 22));
+        tblOrdenes.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tblOrdenes.setForeground(new java.awt.Color(252, 245, 224));
+        tblOrdenes.setFillsViewportHeight(true);
+        tblOrdenes.setGridColor(new java.awt.Color(57, 49, 38));
+        tblOrdenes.setRowHeight(24);
+        tblOrdenes.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tblOrdenes.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tblOrdenes);
         tblOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -207,6 +233,8 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
             }
         });
         tblOrdenes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        scrEstadoOrden.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(scrEstadoOrden);
         scrEstadoOrden.setViewportView(tblOrdenes);
         if (tblOrdenes.getColumnModel().getColumnCount() > 0) {
             tblOrdenes.getColumnModel().getColumn(0).setPreferredWidth(50);
@@ -220,6 +248,7 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
         }
 
         javax.swing.GroupLayout pnlTablaLayout = new javax.swing.GroupLayout(pnlTabla);
+        pnlTabla.setOpaque(false);
         pnlTabla.setLayout(pnlTablaLayout);
         pnlTablaLayout.setHorizontalGroup(
             pnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,38 +265,62 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Poppins SemiBold", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(252, 245, 224));
         jLabel8.setText("¿Qué realizarás?");
 
         buttonGroup1.add(btnVerificar);
+        btnVerificar.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        btnVerificar.setForeground(new java.awt.Color(252, 245, 224));
+        btnVerificar.setOpaque(false);
         btnVerificar.setText("Verificar el producto");
         btnVerificar.addActionListener(this::btnVerificarActionPerformed);
 
         buttonGroup1.add(btnFinalizacion);
+        btnFinalizacion.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        btnFinalizacion.setForeground(new java.awt.Color(252, 245, 224));
+        btnFinalizacion.setOpaque(false);
         btnFinalizacion.setText("Registrar finalización");
         btnFinalizacion.addActionListener(this::btnFinalizacionActionPerformed);
 
         buttonGroup1.add(btnHistorial);
+        btnHistorial.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        btnHistorial.setForeground(new java.awt.Color(252, 245, 224));
+        btnHistorial.setOpaque(false);
         btnHistorial.setText("Ver historial de cambios");
         btnHistorial.setToolTipText("");
 
+        btnEjecutar.setBackground(new java.awt.Color(253, 216, 24));
+        btnEjecutar.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnEjecutar.setForeground(new java.awt.Color(23, 20, 13));
+        btnEjecutar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEjecutar.setContentAreaFilled(false);
+        btnEjecutar.setOpaque(true);
         btnEjecutar.setText("Ejecutar");
         btnEjecutar.addActionListener(this::btnEjecutarActionPerformed);
 
         buttonGroup1.add(btnAdelanto);
+        btnAdelanto.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        btnAdelanto.setForeground(new java.awt.Color(252, 245, 224));
+        btnAdelanto.setOpaque(false);
         btnAdelanto.setText("Confirmar adelanto");
         btnAdelanto.setToolTipText("");
         btnAdelanto.addActionListener(this::btnAdelantoActionPerformed);
 
         buttonGroup1.add(btnCancelacion);
+        btnCancelacion.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        btnCancelacion.setForeground(new java.awt.Color(252, 245, 224));
+        btnCancelacion.setOpaque(false);
         btnCancelacion.setText("Registrar cancelación");
         btnCancelacion.setToolTipText("");
         btnCancelacion.addActionListener(this::btnCancelacionActionPerformed);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(252, 245, 224));
         jLabel2.setText("Número correlativo");
 
         javax.swing.GroupLayout pnlFormularioLayout = new javax.swing.GroupLayout(pnlFormulario);
+        pnlFormulario.setBackground(new java.awt.Color(33, 29, 24));
         pnlFormulario.setLayout(pnlFormularioLayout);
         pnlFormularioLayout.setHorizontalGroup(
             pnlFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,6 +378,12 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
                 .addContainerGap(272, Short.MAX_VALUE))
         );
 
+        btnVolver.setBackground(new java.awt.Color(46, 38, 12));
+        btnVolver.setFont(new java.awt.Font("Poppins SemiBold", 0, 13)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(253, 216, 24));
+        btnVolver.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.setOpaque(true);
         btnVolver.setText("<-- Volver");
         btnVolver.addActionListener(this::btnVolverActionPerformed);
 
@@ -338,7 +397,7 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
                     .addGroup(pnlOrdenesLayout.createSequentialGroup()
                         .addGroup(pnlOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlOrdenesLayout.createSequentialGroup()
-                                .addGap(0, 29, Short.MAX_VALUE)
+                                .addGap(0, 41, Short.MAX_VALUE)
                                 .addComponent(pnlTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12))
                             .addGroup(pnlOrdenesLayout.createSequentialGroup()
@@ -351,7 +410,7 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
         pnlOrdenesLayout.setVerticalGroup(
             pnlOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOrdenesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,23 +419,15 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlOrdenesLayout.createSequentialGroup()
                         .addComponent(pnlTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(btnVolver)
                         .addGap(14, 14, 14))))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(pnlOrdenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 862, 717));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/ordenes.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -419,6 +470,7 @@ public class VentanaGestionEstadoOrden extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JPanel pnlFormulario;
     private javax.swing.JPanel pnlOrdenes;
     private javax.swing.JPanel pnlTabla;

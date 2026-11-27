@@ -62,13 +62,28 @@ public class VentanaListaJuguetes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlContenido = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblJuguetes = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Jueguetes Registrados");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlContenido.setOpaque(false);
+
+        tblJuguetes.setBackground(new java.awt.Color(25, 24, 22));
+        tblJuguetes.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tblJuguetes.setForeground(new java.awt.Color(252, 245, 224));
+        tblJuguetes.setFillsViewportHeight(true);
+        tblJuguetes.setGridColor(new java.awt.Color(57, 49, 38));
+        tblJuguetes.setRowHeight(24);
+        tblJuguetes.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tblJuguetes.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tblJuguetes);
         tblJuguetes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -88,33 +103,42 @@ public class VentanaListaJuguetes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(jScrollPane1);
         jScrollPane1.setViewportView(tblJuguetes);
 
+        lblTitulo.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(252, 245, 224));
         lblTitulo.setText("JUGUETES REGISTRADOS");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(325, 325, 325)
                         .addComponent(lblTitulo))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlContenidoLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(lblTitulo)
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
+
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 816, 664));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/lista-juguetes.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,7 +170,9 @@ public class VentanaListaJuguetes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlContenido;
     private javax.swing.JTable tblJuguetes;
     // End of variables declaration//GEN-END:variables
 }

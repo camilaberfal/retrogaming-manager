@@ -60,12 +60,27 @@ public class VentanaListaServicios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlContenido = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblServicios = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlContenido.setOpaque(false);
+
+        tblServicios.setBackground(new java.awt.Color(25, 24, 22));
+        tblServicios.setFont(new java.awt.Font("Poppins Regular", 0, 12)); // NOI18N
+        tblServicios.setForeground(new java.awt.Color(252, 245, 224));
+        tblServicios.setFillsViewportHeight(true);
+        tblServicios.setGridColor(new java.awt.Color(57, 49, 38));
+        tblServicios.setRowHeight(24);
+        tblServicios.setSelectionBackground(new java.awt.Color(253, 216, 24));
+        tblServicios.setSelectionForeground(new java.awt.Color(23, 20, 13));
+        EstiloTablasRetro.aplicarEncabezado(tblServicios);
         tblServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -82,33 +97,42 @@ public class VentanaListaServicios extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(87, 74, 55)));
+        EstiloTablasRetro.aplicarBarras(jScrollPane1);
         jScrollPane1.setViewportView(tblServicios);
 
+        lblTitulo.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(252, 245, 224));
         lblTitulo.setText("SERVICIOS REGISTRADOS");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(252, 252, 252)
                         .addComponent(lblTitulo)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlContenidoLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
         );
+
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 647, 602));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/lista-servicios.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,7 +164,9 @@ public class VentanaListaServicios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlContenido;
     private javax.swing.JTable tblServicios;
     // End of variables declaration//GEN-END:variables
 }

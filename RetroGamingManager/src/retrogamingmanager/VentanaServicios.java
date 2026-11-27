@@ -62,14 +62,27 @@ public class VentanaServicios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlContenido = new javax.swing.JPanel();
         lblCodigo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
         lblStock = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
+        txtCodigo.setBackground(new java.awt.Color(251, 237, 197));
+        txtCodigo.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(23, 20, 13));
         txtPrecio = new javax.swing.JTextField();
+        txtPrecio.setBackground(new java.awt.Color(251, 237, 197));
+        txtPrecio.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtPrecio.setForeground(new java.awt.Color(23, 20, 13));
         txtStock = new javax.swing.JTextField();
+        txtStock.setBackground(new java.awt.Color(251, 237, 197));
+        txtStock.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtStock.setForeground(new java.awt.Color(23, 20, 13));
         txtNombre = new javax.swing.JTextField();
+        txtNombre.setBackground(new java.awt.Color(251, 237, 197));
+        txtNombre.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(23, 20, 13));
         btnRegistrar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -77,47 +90,99 @@ public class VentanaServicios extends javax.swing.JFrame {
         btnLimpiar = new javax.swing.JButton();
         btnVerServicios = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlContenido.setOpaque(false);
+
+        lblCodigo.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(252, 245, 224));
         lblCodigo.setText("Código");
 
+        lblNombre.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(252, 245, 224));
         lblNombre.setText("Nombre");
 
+        lblPrecio.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblPrecio.setForeground(new java.awt.Color(252, 245, 224));
         lblPrecio.setText("Precio unitario (S/)");
 
+        lblStock.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+        lblStock.setForeground(new java.awt.Color(252, 245, 224));
         lblStock.setText("Stock");
 
+        btnRegistrar.setBackground(new java.awt.Color(253, 216, 24));
+        btnRegistrar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(23, 20, 13));
+        btnRegistrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.setContentAreaFilled(false);
+        btnRegistrar.setOpaque(true);
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
+        btnBuscar.setBackground(new java.awt.Color(25, 24, 22));
+        btnBuscar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(252, 245, 224));
+        btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBuscar.setContentAreaFilled(false);
+        btnBuscar.setOpaque(true);
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
 
+        btnModificar.setBackground(new java.awt.Color(25, 24, 22));
+        btnModificar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(252, 245, 224));
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setContentAreaFilled(false);
+        btnModificar.setOpaque(true);
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(this::btnModificarActionPerformed);
 
+        btnEliminar.setBackground(new java.awt.Color(25, 24, 22));
+        btnEliminar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(252, 245, 224));
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setOpaque(true);
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(this::btnEliminarActionPerformed);
 
+        btnLimpiar.setBackground(new java.awt.Color(25, 24, 22));
+        btnLimpiar.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(252, 245, 224));
+        btnLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLimpiar.setContentAreaFilled(false);
+        btnLimpiar.setOpaque(true);
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
+        btnVerServicios.setBackground(new java.awt.Color(25, 24, 22));
+        btnVerServicios.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
+        btnVerServicios.setForeground(new java.awt.Color(252, 245, 224));
+        btnVerServicios.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVerServicios.setContentAreaFilled(false);
+        btnVerServicios.setOpaque(true);
         btnVerServicios.setText("Ver servicios registrados");
         btnVerServicios.addActionListener(this::btnVerServiciosActionPerformed);
 
+        lblTitulo.setFont(new java.awt.Font("Poppins SemiBold", 0, 23)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(252, 245, 224));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("GESTIÓN DE SERVICIOS ADICIONALES");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(96, 96, 96)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnlContenidoLayout.createSequentialGroup()
                                 .addComponent(btnRegistrar)
                                 .addGap(29, 29, 29)
                                 .addComponent(btnBuscar)
@@ -125,62 +190,67 @@ public class VentanaServicios extends javax.swing.JFrame {
                                 .addComponent(btnModificar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnEliminar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(91, 91, 91)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblStock, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addComponent(btnVerServicios)
                         .addGap(43, 43, 43)
                         .addComponent(btnLimpiar)))
-                .addContainerGap(124, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlContenidoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177))
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addComponent(lblTitulo)
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
                     .addComponent(lblNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrecio)
                     .addComponent(lblStock))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnBuscar)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
                     .addComponent(btnVerServicios))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
+
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 614, 525));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondos/servicios.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -314,10 +384,12 @@ public class VentanaServicios extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVerServicios;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblStock;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlContenido;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecio;

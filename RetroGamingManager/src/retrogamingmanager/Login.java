@@ -52,7 +52,7 @@ public class Login extends javax.swing.JFrame {
         lblUsuario.setText("Usuario:");
         getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 100, 25));
 
-        txtUsuario.setBackground(new java.awt.Color(252, 245, 224));
+        txtUsuario.setBackground(new java.awt.Color(251, 237, 197));
         txtUsuario.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 150, 25));
 
@@ -61,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         lblClave.setText("Contraseña:");
         getContentPane().add(lblClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 110, 25));
 
-        pwdClave.setBackground(new java.awt.Color(252, 245, 224));
+        pwdClave.setBackground(new java.awt.Color(251, 237, 197));
         pwdClave.setFont(new java.awt.Font("Poppins Regular", 0, 13)); // NOI18N
         getContentPane().add(pwdClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 150, 25));
 
@@ -99,7 +99,7 @@ public class Login extends javax.swing.JFrame {
         MenuPrincipal menu = new MenuPrincipal(empleado, gestionPersonal, gestionClientes,
                 gestionEstadoOrden, gestionJuguetes, gestionServicios);
         menu.setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
 
 
