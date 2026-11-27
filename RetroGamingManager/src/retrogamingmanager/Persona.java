@@ -1,6 +1,9 @@
 package retrogamingmanager;
 
-
+/**
+ *
+ * @author emmanuel
+ */
 public abstract class Persona {
     protected String DNI;
     protected String nombres;

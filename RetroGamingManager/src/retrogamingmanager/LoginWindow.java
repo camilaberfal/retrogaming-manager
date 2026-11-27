@@ -5,9 +5,10 @@
 package retrogamingmanager;
 import javax.swing.*;
 import java.awt.*;
+
 /**
  *
- * @author juan_
+ * @author emmanuel
  */
 public class LoginWindow { 
 }

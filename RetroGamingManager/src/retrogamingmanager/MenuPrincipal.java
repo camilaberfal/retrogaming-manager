@@ -8,18 +8,21 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author grupo 13
+ * @author emmanuel
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
     private final Empleados empleado;
     private final GestionPersonal gestionPersonal;
     private final GestionClientes gestionClientes;
+    private final GestionEstadoOrden gestionEstadoOrden;
 
-    public MenuPrincipal(Empleados empleado, GestionPersonal gestionPersonal, GestionClientes gestionClientes) {
+    public MenuPrincipal(Empleados empleado, GestionPersonal gestionPersonal, GestionClientes gestionClientes,
+            GestionEstadoOrden gestionEstadoOrden) {
         this.empleado = empleado;
         this.gestionPersonal = gestionPersonal;
         this.gestionClientes = gestionClientes;
+        this.gestionEstadoOrden = gestionEstadoOrden;
         initComponents();
 
         lblBienvenida.setText("Bienvenido, " + empleado.getNombres() + " " + empleado.getApellidos());
@@ -27,6 +30,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         // Cada rol ve solo sus botones
         String rol = empleado.getRol();
+        btnSeguimiento.setVisible(rol.equals("Vendedor"));
+        btnPreparacion.setVisible(rol.equals("Almacenero"));
         if (!rol.equals("Administrador")) {
             btnEmpleados.setVisible(false);
             btnReportes.setVisible(false);
@@ -35,12 +40,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             btnClientes.setVisible(false);
             btnServicios.setVisible(false);
             btnNuevaOrden.setVisible(false);
-            btnSeguimiento.setVisible(false);
-        }
-        if (rol.equals("Vendedor")) {
-            btnPreparacion.setVisible(false);
         }
 
+        btnSeguimiento.addActionListener(evt -> abrirGestionEstadoOrden());
+        btnPreparacion.addActionListener(evt -> abrirGestionEstadoOrden());
         setLocationRelativeTo(null);
     }
 
@@ -127,27 +130,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnInventario.setBounds(240, 180, 200, 40);
 
         btnSeguimiento.setText("Seguimiento de órdenes");
-        btnSeguimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnSeguimiento);
         btnSeguimiento.setBounds(20, 230, 200, 40);
 
         btnPreparacion.setText("Preparación y entrega");
-        btnPreparacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnPreparacion);
         btnPreparacion.setBounds(240, 230, 200, 40);
 
         btnReportes.setText("Reportes");
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
+                btnReportesActionPerformed(evt);
             }
         });
         getContentPane().add(btnReportes);
@@ -180,11 +173,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Disponible en la integración");
     }//GEN-LAST:event_btnPendienteActionPerformed
 
+    private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
+        if ("Administrador".equals(empleado.getRol())) {
+            GestionReportesGerenciales gestion = new GestionReportesGerenciales(gestionEstadoOrden, gestionPersonal, gestionClientes);
+            new VentanaReportes(gestion).setVisible(true);
+        }
+    }//GEN-LAST:event_btnReportesActionPerformed
+
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         dispose();
-        Login login = new Login(gestionPersonal, gestionClientes);
+        Login login = new Login(gestionPersonal, gestionClientes, gestionEstadoOrden);
         login.setVisible(true);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void abrirGestionEstadoOrden() {
+        VentanaGestionEstadoOrden ventana = new VentanaGestionEstadoOrden(gestionEstadoOrden, empleado);
+        ventana.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent evento) {
+                setVisible(true);
+            }
+        });
+        setVisible(false);
+        ventana.setVisible(true);
+    }
 
 
 

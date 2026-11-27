@@ -1,5 +1,9 @@
 package retrogamingmanager;
 
+/**
+ *
+ * @author emmanuel
+ */
 public class Empleados extends Persona {
     private String usuario;
     private String password;

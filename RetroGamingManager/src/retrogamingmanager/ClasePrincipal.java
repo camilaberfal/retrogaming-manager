@@ -1,32 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package retrogamingmanager;
+import java.util.Calendar;
 import javax.swing.SwingUtilities;
 
 /**
  *
- * @author ASUS
+ * @author grupo14
  */
 public class ClasePrincipal {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         GestionClientes gestionClientes = new GestionClientes();
         GestionPersonal gestionPersonal = new GestionPersonal();
+        GestionOrdenVenta gestionOrdenVenta = new GestionOrdenVenta();
+        GestionEstadoOrden gestionEstadoOrden = new GestionEstadoOrden(gestionOrdenVenta);
         
-        cargarDatosDePrueba(gestionPersonal, gestionClientes);
+        cargarDatosDePrueba(gestionPersonal, gestionClientes, gestionOrdenVenta, gestionEstadoOrden);
         SwingUtilities.invokeLater(() -> {
-            new Login(gestionPersonal, gestionClientes).setVisible(true);
+            new Login(gestionPersonal, gestionClientes, gestionEstadoOrden).setVisible(true);
         });
     }
-    private static void cargarDatosDePrueba(GestionPersonal gp, GestionClientes gc) {
+    private static void cargarDatosDePrueba(GestionPersonal gp, GestionClientes gc,
+        GestionOrdenVenta ventas, GestionEstadoOrden estados) {
+        Empleados vendedor = new Empleados("22222222", "Luis", "Ramos", "vendedor", "vende123", "Vendedor");
+        Empleados almacenero = new Empleados("33333333", "Rosa", "Diaz", "almacen", "alma123", "Almacenero");
         mostrarSiHayError(gp.registrar(new Empleados("11111111", "Ana", "Torres", "admin", "admin123", "Administrador")));
-        mostrarSiHayError(gp.registrar(new Empleados("22222222", "Luis", "Ramos", "vendedor", "vende123", "Vendedor")));
-        mostrarSiHayError(gp.registrar(new Empleados("33333333", "Rosa", "Diaz", "almacen", "alma123", "Almacenero")));
+        mostrarSiHayError(gp.registrar(vendedor));
+        mostrarSiHayError(gp.registrar(almacenero));
 
         mostrarSiHayError(gc.registrar(new ClienteRegular("70000001", "Carlos", "Mendoza", "987654321", "carlos@mail.com")));
         mostrarSiHayError(gc.registrar(new ClienteRegular("70000002", "Lucia", "Paredes", "987654322", "lucia@mail.com")));
@@ -37,6 +35,26 @@ public class ClasePrincipal {
         for (int i = 0; i < 4; i++) {
             gc.registrarCompraFinalizada("70000003");
         }
+
+        cargarOrdenesDePrueba(ventas, estados, vendedor, almacenero);
+    }
+
+    private static void cargarOrdenesDePrueba(GestionOrdenVenta ventas, GestionEstadoOrden estados, Empleados vendedor, Empleados almacenero) {
+        Calendar entrega = Calendar.getInstance();
+        entrega.add(Calendar.HOUR_OF_DAY, 12);
+        Fecha fechaCercana = new Fecha(entrega.get(Calendar.YEAR), entrega.get(Calendar.MONTH) + 1,
+                entrega.get(Calendar.DAY_OF_MONTH));
+        Hora hora = new Hora(entrega.get(Calendar.HOUR_OF_DAY), entrega.get(Calendar.MINUTE));
+
+        entrega.add(Calendar.DAY_OF_MONTH, 2);
+        Fecha fechaLejana = new Fecha(entrega.get(Calendar.YEAR), entrega.get(Calendar.MONTH) + 1,
+                entrega.get(Calendar.DAY_OF_MONTH));
+
+        ventas.crearOrden(120, fechaLejana, hora);
+        ventas.crearOrden(180, fechaLejana, hora);
+        ventas.crearOrden(240, fechaLejana, hora);
+        ventas.crearOrden(320, fechaLejana, hora);
+        ventas.crearOrden(150, fechaCercana, hora);
     }
 
     private static void mostrarSiHayError(String error) {

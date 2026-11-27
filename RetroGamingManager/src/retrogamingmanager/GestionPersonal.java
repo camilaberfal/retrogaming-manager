@@ -6,7 +6,7 @@ package retrogamingmanager;
 
 /**
  *
- * @author juan_
+ * @author emmanuel
  */
 public class GestionPersonal {
     private Empleados[] empleados = new Empleados[100];

@@ -1,5 +1,9 @@
 package retrogamingmanager;
 
+/**
+ *
+ * @author emmanuel
+ */
 public abstract class Clientes extends Persona {
     private String telefono;
     private String correo;

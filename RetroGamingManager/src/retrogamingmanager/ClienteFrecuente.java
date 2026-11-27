@@ -6,7 +6,7 @@ package retrogamingmanager;
 
 /**
  *
- * @author juan_
+ * @author emmanuel
  */
 public class ClienteFrecuente extends Clientes {
     private static final String tipo = "Coleccionista Frecuente";

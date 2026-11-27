@@ -8,16 +8,19 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author grupo 13
+ * @author emmanuel
  */
 public class Login extends javax.swing.JFrame {
 
     private final GestionPersonal gestionPersonal;
     private final GestionClientes gestionClientes;
+    private final GestionEstadoOrden gestionEstadoOrden;
 
-    public Login(GestionPersonal gestionPersonal, GestionClientes gestionClientes) {
+    public Login(GestionPersonal gestionPersonal, GestionClientes gestionClientes,
+            GestionEstadoOrden gestionEstadoOrden) {
         this.gestionPersonal = gestionPersonal;
         this.gestionClientes = gestionClientes;
+        this.gestionEstadoOrden = gestionEstadoOrden;
         initComponents();
         getRootPane().setDefaultButton(btnIngresar);
         setLocationRelativeTo(null);
@@ -78,7 +81,7 @@ public class Login extends javax.swing.JFrame {
             return;
         }
 
-        MenuPrincipal menu = new MenuPrincipal(empleado, gestionPersonal, gestionClientes);
+        MenuPrincipal menu = new MenuPrincipal(empleado, gestionPersonal, gestionClientes, gestionEstadoOrden);
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnIngresarActionPerformed

@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author grupo 13
+ * @author emmanuel
  */
 public class VentanaEmpleados extends javax.swing.JFrame {
 
