@@ -1,110 +1,205 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package retrogamingmanager;
 
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
-public class MenuPrincipal extends JFrame implements ActionListener {
+/**
+ *
+ * @author grupo 13
+ */
+public class MenuPrincipal extends javax.swing.JFrame {
 
-    private Empleados empleado;
-    private GestionPersonal gestionPersonal;
-    private GestionClientes gestionClientes;
-
-    private JLabel lblBienvenida;
-    private JLabel lblRol;
-    private JPanel panelBotones;
-
-    private JButton btnEmpleados;
-    private JButton btnClientes;
-    private JButton btnJuguetes;
-    private JButton btnServicios;
-    private JButton btnNuevaOrden;
-    private JButton btnInventario;
-    private JButton btnSeguimiento;
-    private JButton btnPreparacion;
-    private JButton btnReportes;
-    private JButton btnCerrarSesion;
+    private final Empleados empleado;
+    private final GestionPersonal gestionPersonal;
+    private final GestionClientes gestionClientes;
 
     public MenuPrincipal(Empleados empleado, GestionPersonal gestionPersonal, GestionClientes gestionClientes) {
         this.empleado = empleado;
         this.gestionPersonal = gestionPersonal;
         this.gestionClientes = gestionClientes;
+        initComponents();
 
-        setTitle("Retro Gaming Manager - Menú principal");
-        setSize(450, 400);
-        setLayout(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        lblBienvenida = new JLabel("Bienvenido, " + empleado.getNombres() + " " + empleado.getApellidos());
-        lblBienvenida.setBounds(20, 10, 400, 25);
-        add(lblBienvenida);
-
-        lblRol = new JLabel("Rol: " + empleado.getRol());
-        lblRol.setBounds(20, 35, 400, 25);
-        add(lblRol);
-
-        panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(0, 2, 10, 10));
-        panelBotones.setBounds(20, 70, 400, 280);
-        add(panelBotones);
-
-        btnEmpleados = crearBoton("Gestión de empleados");
-        btnClientes = crearBoton("Gestión de clientes");
-        btnJuguetes = crearBoton("Juguetes");
-        btnServicios = crearBoton("Servicios y paquetes");
-        btnNuevaOrden = crearBoton("Nueva orden");
-        btnInventario = crearBoton("Consulta de inventario");
-        btnSeguimiento = crearBoton("Seguimiento de órdenes");
-        btnPreparacion = crearBoton("Preparación y entrega");
-        btnReportes = crearBoton("Reportes");
-        btnCerrarSesion = crearBoton("Cerrar sesión");
+        lblBienvenida.setText("Bienvenido, " + empleado.getNombres() + " " + empleado.getApellidos());
+        lblRol.setText("Rol: " + empleado.getRol());
 
         // Cada rol ve solo sus botones
         String rol = empleado.getRol();
         if (!rol.equals("Administrador")) {
-            panelBotones.remove(btnEmpleados);
-            panelBotones.remove(btnReportes);
+            btnEmpleados.setVisible(false);
+            btnReportes.setVisible(false);
         }
         if (rol.equals("Almacenero")) {
-            panelBotones.remove(btnClientes);
-            panelBotones.remove(btnServicios);
-            panelBotones.remove(btnNuevaOrden);
-            panelBotones.remove(btnSeguimiento);
+            btnClientes.setVisible(false);
+            btnServicios.setVisible(false);
+            btnNuevaOrden.setVisible(false);
+            btnSeguimiento.setVisible(false);
         }
         if (rol.equals("Vendedor")) {
-            panelBotones.remove(btnPreparacion);
+            btnPreparacion.setVisible(false);
         }
 
         setLocationRelativeTo(null);
     }
 
-    private JButton crearBoton(String texto) {
-        JButton boton = new JButton(texto);
-        boton.addActionListener(this);
-        panelBotones.add(boton);
-        return boton;
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnEmpleados) {
-            VentanaEmpleados ventana = new VentanaEmpleados(gestionPersonal, empleado);
-            ventana.setVisible(true);
-        } else if (e.getSource() == btnClientes) {
-            VentanaClientes ventana = new VentanaClientes(gestionClientes);
-            ventana.setVisible(true);
-        } else if (e.getSource() == btnCerrarSesion) {
-            dispose();
-            Login login = new Login(gestionPersonal, gestionClientes);
-            login.setVisible(true);
-        } else {
-            // Botones de las partes 2 y 3
-            JOptionPane.showMessageDialog(this, "Disponible en la integración");
-        }
-    }
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        lblBienvenida = new javax.swing.JLabel();
+        lblRol = new javax.swing.JLabel();
+        btnEmpleados = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
+        btnJuguetes = new javax.swing.JButton();
+        btnServicios = new javax.swing.JButton();
+        btnNuevaOrden = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
+        btnSeguimiento = new javax.swing.JButton();
+        btnPreparacion = new javax.swing.JButton();
+        btnReportes = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        lblBienvenida.setText("Bienvenido");
+        getContentPane().add(lblBienvenida);
+        lblBienvenida.setBounds(20, 15, 420, 25);
+
+        lblRol.setText("Rol");
+        getContentPane().add(lblRol);
+        lblRol.setBounds(20, 40, 420, 25);
+
+        btnEmpleados.setText("Gestión de empleados");
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEmpleados);
+        btnEmpleados.setBounds(20, 80, 200, 40);
+
+        btnClientes.setText("Gestión de clientes");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClientes);
+        btnClientes.setBounds(240, 80, 200, 40);
+
+        btnJuguetes.setText("Juguetes");
+        btnJuguetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnJuguetes);
+        btnJuguetes.setBounds(20, 130, 200, 40);
+
+        btnServicios.setText("Servicios y paquetes");
+        btnServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnServicios);
+        btnServicios.setBounds(240, 130, 200, 40);
+
+        btnNuevaOrden.setText("Nueva orden");
+        btnNuevaOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNuevaOrden);
+        btnNuevaOrden.setBounds(20, 180, 200, 40);
+
+        btnInventario.setText("Consulta de inventario");
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInventario);
+        btnInventario.setBounds(240, 180, 200, 40);
+
+        btnSeguimiento.setText("Seguimiento de órdenes");
+        btnSeguimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSeguimiento);
+        btnSeguimiento.setBounds(20, 230, 200, 40);
+
+        btnPreparacion.setText("Preparación y entrega");
+        btnPreparacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPreparacion);
+        btnPreparacion.setBounds(240, 230, 200, 40);
+
+        btnReportes.setText("Reportes");
+        btnReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnReportes);
+        btnReportes.setBounds(20, 280, 200, 40);
+
+        btnCerrarSesion.setText("Cerrar sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCerrarSesion);
+        btnCerrarSesion.setBounds(240, 280, 200, 40);
+
+        setSize(new java.awt.Dimension(470, 420));
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        VentanaEmpleados ventana = new VentanaEmpleados(gestionPersonal, empleado);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        VentanaClientes ventana = new VentanaClientes(gestionClientes);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnPendienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendienteActionPerformed
+        // Botones de las partes 2 y 3 (se conectan en la integración)
+        JOptionPane.showMessageDialog(this, "Disponible en la integración");
+    }//GEN-LAST:event_btnPendienteActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        dispose();
+        Login login = new Login(gestionPersonal, gestionClientes);
+        login.setVisible(true);
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnInventario;
+    private javax.swing.JButton btnJuguetes;
+    private javax.swing.JButton btnNuevaOrden;
+    private javax.swing.JButton btnPreparacion;
+    private javax.swing.JButton btnReportes;
+    private javax.swing.JButton btnSeguimiento;
+    private javax.swing.JButton btnServicios;
+    private javax.swing.JLabel lblBienvenida;
+    private javax.swing.JLabel lblRol;
+    // End of variables declaration//GEN-END:variables
 }

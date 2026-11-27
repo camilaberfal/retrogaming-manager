@@ -1,114 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package retrogamingmanager;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class VentanaClientes extends JFrame implements ActionListener {
+/**
+ *
+ * @author grupo 13
+ */
+public class VentanaClientes extends javax.swing.JFrame {
 
-    private GestionClientes gestion;
-
-    private JTextField txtDni;
-    private JTextField txtNombres;
-    private JTextField txtApellidos;
-    private JTextField txtTelefono;
-    private JTextField txtCorreo;
-
-    private JButton btnRegistrar;
-    private JButton btnModificar;
-    private JButton btnEliminar;
-    private JButton btnLimpiar;
-    private JButton btnCompra;
-
-    private JTable tblClientes;
+    private final GestionClientes gestion;
     private DefaultTableModel modelo;
 
     public VentanaClientes(GestionClientes gestion) {
         this.gestion = gestion;
-
-        setTitle("Gestión de clientes");
-        setSize(900, 550);
-        setLayout(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
-        // Campos
-        agregarEtiqueta("DNI:", 20, 20);
-        txtDni = new JTextField();
-        txtDni.setBounds(130, 20, 200, 25);
-        add(txtDni);
-
-        agregarEtiqueta("Nombres:", 20, 55);
-        txtNombres = new JTextField();
-        txtNombres.setBounds(130, 55, 200, 25);
-        add(txtNombres);
-
-        agregarEtiqueta("Apellidos:", 20, 90);
-        txtApellidos = new JTextField();
-        txtApellidos.setBounds(130, 90, 200, 25);
-        add(txtApellidos);
-
-        agregarEtiqueta("Teléfono:", 400, 20);
-        txtTelefono = new JTextField();
-        txtTelefono.setBounds(480, 20, 200, 25);
-        add(txtTelefono);
-
-        agregarEtiqueta("Correo:", 400, 55);
-        txtCorreo = new JTextField();
-        txtCorreo.setBounds(480, 55, 200, 25);
-        add(txtCorreo);
-
-        // Botones
-        btnRegistrar = crearBoton("Registrar", 20, 135, 110);
-        btnModificar = crearBoton("Modificar", 140, 135, 110);
-        btnEliminar = crearBoton("Eliminar", 260, 135, 110);
-        btnLimpiar = crearBoton("Limpiar", 380, 135, 110);
-        btnCompra = crearBoton("Registrar compra finalizada", 500, 135, 220);
-
-        // Tabla
-        String[] columnas = {"DNI", "Nombres", "Apellidos", "Teléfono", "Correo", "Tipo", "Compras", "Desc."};
-        modelo = new DefaultTableModel(columnas, 0) {
-            @Override
-            public boolean isCellEditable(int fila, int columna) {
-                return false;
-            }
-        };
-        tblClientes = new JTable(modelo);
-        JScrollPane scroll = new JScrollPane(tblClientes);
-        scroll.setBounds(20, 185, 840, 300);
-        add(scroll);
-
-        tblClientes.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                cargarFilaSeleccionada();
-            }
-        });
-
+        initComponents();
+        modelo = (DefaultTableModel) tblClientes.getModel();
         actualizarTabla();
         setLocationRelativeTo(null);
-    }
-
-    private void agregarEtiqueta(String texto, int x, int y) {
-        JLabel etiqueta = new JLabel(texto);
-        etiqueta.setBounds(x, y, 100, 25);
-        add(etiqueta);
-    }
-
-    private JButton crearBoton(String texto, int x, int y, int ancho) {
-        JButton boton = new JButton(texto);
-        boton.setBounds(x, y, ancho, 30);
-        boton.addActionListener(this);
-        add(boton);
-        return boton;
     }
 
     private void actualizarTabla() {
@@ -132,7 +45,200 @@ public class VentanaClientes extends JFrame implements ActionListener {
         tblClientes.clearSelection();
     }
 
-    private void cargarFilaSeleccionada() {
+
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        lblDni = new javax.swing.JLabel();
+        txtDni = new javax.swing.JTextField();
+        lblNombres = new javax.swing.JLabel();
+        txtNombres = new javax.swing.JTextField();
+        lblApellidos = new javax.swing.JLabel();
+        txtApellidos = new javax.swing.JTextField();
+        lblTelefono = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        lblCorreo = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnCompra = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblClientes = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        lblDni.setText("DNI:");
+        getContentPane().add(lblDni);
+        lblDni.setBounds(20, 20, 100, 25);
+
+        getContentPane().add(txtDni);
+        txtDni.setBounds(130, 20, 200, 25);
+
+        lblNombres.setText("Nombres:");
+        getContentPane().add(lblNombres);
+        lblNombres.setBounds(20, 55, 100, 25);
+
+        getContentPane().add(txtNombres);
+        txtNombres.setBounds(130, 55, 200, 25);
+
+        lblApellidos.setText("Apellidos:");
+        getContentPane().add(lblApellidos);
+        lblApellidos.setBounds(20, 90, 100, 25);
+
+        getContentPane().add(txtApellidos);
+        txtApellidos.setBounds(130, 90, 200, 25);
+
+        lblTelefono.setText("Teléfono:");
+        getContentPane().add(lblTelefono);
+        lblTelefono.setBounds(400, 20, 100, 25);
+
+        getContentPane().add(txtTelefono);
+        txtTelefono.setBounds(480, 20, 200, 25);
+
+        lblCorreo.setText("Correo:");
+        getContentPane().add(lblCorreo);
+        lblCorreo.setBounds(400, 55, 100, 25);
+
+        getContentPane().add(txtCorreo);
+        txtCorreo.setBounds(480, 55, 200, 25);
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegistrar);
+        btnRegistrar.setBounds(20, 135, 110, 30);
+
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnModificar);
+        btnModificar.setBounds(140, 135, 110, 30);
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(260, 135, 110, 30);
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpiar);
+        btnLimpiar.setBounds(380, 135, 110, 30);
+
+        btnCompra.setText("Registrar compra finalizada");
+        btnCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCompra);
+        btnCompra.setBounds(500, 135, 220, 30);
+
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "DNI", "Nombres", "Apellidos", "Teléfono", "Correo", "Tipo", "Compras", "Desc."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblClientes);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(20, 185, 840, 300);
+
+        setSize(new java.awt.Dimension(900, 550));
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Clientes nuevo = new ClienteRegular(txtDni.getText().trim(), txtNombres.getText().trim(),
+                txtApellidos.getText().trim(), txtTelefono.getText().trim(), txtCorreo.getText().trim());
+        String error = gestion.registrar(nuevo);
+        if (error != null) {
+            JOptionPane.showMessageDialog(this, error);
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Cliente registrado");
+        actualizarTabla();
+        limpiar();
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String error = gestion.modificar(txtDni.getText().trim(), txtNombres.getText().trim(),
+                txtApellidos.getText().trim(), txtTelefono.getText().trim(), txtCorreo.getText().trim());
+        if (error != null) {
+            JOptionPane.showMessageDialog(this, error);
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Cliente modificado");
+        actualizarTabla();
+        limpiar();
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String dni = txtDni.getText().trim();
+        if (dni.equals("")) {
+            JOptionPane.showMessageDialog(this, "Seleccione un cliente de la tabla");
+            return;
+        }
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Eliminar al cliente " + dni + "?");
+        if (respuesta == JOptionPane.YES_OPTION) {
+            gestion.eliminar(dni);
+            actualizarTabla();
+            limpiar();
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
+        String dni = txtDni.getText().trim();
+        if (dni.equals("")) {
+            JOptionPane.showMessageDialog(this, "Seleccione un cliente de la tabla");
+            return;
+        }
+        String tipoAntes = gestion.buscarPorDni(dni).getTipo();
+        gestion.registrarCompraFinalizada(dni);
+        String tipoDespues = gestion.buscarPorDni(dni).getTipo();
+        actualizarTabla();
+        if (!tipoAntes.equals(tipoDespues)) {
+            JOptionPane.showMessageDialog(this, "El cliente ahora es " + tipoDespues);
+        }
+        limpiar();
+    }//GEN-LAST:event_btnCompraActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
         int fila = tblClientes.getSelectedRow();
         if (fila == -1) {
             return;
@@ -147,65 +253,27 @@ public class VentanaClientes extends JFrame implements ActionListener {
             txtCorreo.setText(c.getCorreo());
             txtDni.setEnabled(false);
         }
-    }
+    }//GEN-LAST:event_tblClientesMouseClicked
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String dni = txtDni.getText().trim();
-        String nombres = txtNombres.getText().trim();
-        String apellidos = txtApellidos.getText().trim();
-        String telefono = txtTelefono.getText().trim();
-        String correo = txtCorreo.getText().trim();
 
-        if (e.getSource() == btnRegistrar) {
-            Clientes nuevo = new ClienteRegular(dni, nombres, apellidos, telefono, correo);
-            String error = gestion.registrar(nuevo);
-            if (error != null) {
-                JOptionPane.showMessageDialog(this, error);
-                return;
-            }
-            JOptionPane.showMessageDialog(this, "Cliente registrado");
-            actualizarTabla();
-            limpiar();
 
-        } else if (e.getSource() == btnModificar) {
-            String error = gestion.modificar(dni, nombres, apellidos, telefono, correo);
-            if (error != null) {
-                JOptionPane.showMessageDialog(this, error);
-                return;
-            }
-            JOptionPane.showMessageDialog(this, "Cliente modificado");
-            actualizarTabla();
-            limpiar();
-
-        } else if (e.getSource() == btnEliminar) {
-            if (dni.equals("")) {
-                JOptionPane.showMessageDialog(this, "Seleccione un cliente de la tabla");
-                return;
-            }
-            int respuesta = JOptionPane.showConfirmDialog(this, "¿Eliminar al cliente " + dni + "?");
-            if (respuesta == JOptionPane.YES_OPTION) {
-                gestion.eliminar(dni);
-                actualizarTabla();
-                limpiar();
-            }
-
-        } else if (e.getSource() == btnLimpiar) {
-            limpiar();
-
-        } else if (e.getSource() == btnCompra) {
-            if (dni.equals("")) {
-                JOptionPane.showMessageDialog(this, "Seleccione un cliente de la tabla");
-                return;
-            }
-            String tipoAntes = gestion.buscarPorDni(dni).getTipo();
-            gestion.registrarCompraFinalizada(dni);
-            String tipoDespues = gestion.buscarPorDni(dni).getTipo();
-            actualizarTabla();
-            if (!tipoAntes.equals(tipoDespues)) {
-                JOptionPane.showMessageDialog(this, "El cliente ahora es " + tipoDespues);
-            }
-            limpiar();
-        }
-    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCompra;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblApellidos;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblDni;
+    private javax.swing.JLabel lblNombres;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JTable tblClientes;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDni;
+    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtTelefono;
+    // End of variables declaration//GEN-END:variables
 }
