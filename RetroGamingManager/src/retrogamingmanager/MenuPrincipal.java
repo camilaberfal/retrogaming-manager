@@ -4,6 +4,7 @@
  */
 package retrogamingmanager;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,13 +17,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private final GestionPersonal gestionPersonal;
     private final GestionClientes gestionClientes;
     private final GestionEstadoOrden gestionEstadoOrden;
+    private final GestionJuguetes gestionJuguetes;
+    private final GestionServicios gestionServicios;
 
     public MenuPrincipal(Empleados empleado, GestionPersonal gestionPersonal, GestionClientes gestionClientes,
-            GestionEstadoOrden gestionEstadoOrden) {
+            GestionEstadoOrden gestionEstadoOrden, GestionJuguetes gestionJuguetes,
+            GestionServicios gestionServicios) {
         this.empleado = empleado;
         this.gestionPersonal = gestionPersonal;
         this.gestionClientes = gestionClientes;
         this.gestionEstadoOrden = gestionEstadoOrden;
+        this.gestionJuguetes = gestionJuguetes;
+        this.gestionServicios = gestionServicios;
         initComponents();
 
         lblBienvenida.setText("Bienvenido, " + empleado.getNombres() + " " + empleado.getApellidos());
@@ -35,10 +41,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (!rol.equals("Administrador")) {
             btnEmpleados.setVisible(false);
             btnReportes.setVisible(false);
+            btnJuguetes.setVisible(false);
+            btnServicios.setVisible(false);
         }
         if (rol.equals("Almacenero")) {
             btnClientes.setVisible(false);
-            btnServicios.setVisible(false);
             btnNuevaOrden.setVisible(false);
         }
 
@@ -53,6 +60,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         lblBienvenida = new javax.swing.JLabel();
         lblRol = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         btnEmpleados = new javax.swing.JButton();
         btnClientes = new javax.swing.JButton();
         btnJuguetes = new javax.swing.JButton();
@@ -65,97 +73,117 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setSize(new java.awt.Dimension(470, 420));
 
         lblBienvenida.setText("Bienvenido");
-        getContentPane().add(lblBienvenida);
-        lblBienvenida.setBounds(20, 15, 420, 25);
 
         lblRol.setText("Rol");
-        getContentPane().add(lblRol);
-        lblRol.setBounds(20, 40, 420, 25);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(420, 250));
 
         btnEmpleados.setText("Gestión de empleados");
+        btnEmpleados.setPreferredSize(new java.awt.Dimension(200, 40));
         btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmpleadosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEmpleados);
-        btnEmpleados.setBounds(20, 80, 200, 40);
+        jPanel1.add(btnEmpleados);
 
         btnClientes.setText("Gestión de clientes");
+        btnClientes.setPreferredSize(new java.awt.Dimension(200, 40));
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClientes);
-        btnClientes.setBounds(240, 80, 200, 40);
+        jPanel1.add(btnClientes);
 
         btnJuguetes.setText("Juguetes");
+        btnJuguetes.setPreferredSize(new java.awt.Dimension(200, 40));
         btnJuguetes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
+                btnJuguetesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJuguetes);
-        btnJuguetes.setBounds(20, 130, 200, 40);
+        jPanel1.add(btnJuguetes);
 
-        btnServicios.setText("Servicios y paquetes");
+        btnServicios.setText("Servicios adicionales");
+        btnServicios.setPreferredSize(new java.awt.Dimension(200, 40));
         btnServicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
+                btnServiciosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnServicios);
-        btnServicios.setBounds(240, 130, 200, 40);
+        jPanel1.add(btnServicios);
 
         btnNuevaOrden.setText("Nueva orden");
+        btnNuevaOrden.setPreferredSize(new java.awt.Dimension(200, 40));
         btnNuevaOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPendienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNuevaOrden);
-        btnNuevaOrden.setBounds(20, 180, 200, 40);
+        jPanel1.add(btnNuevaOrden);
 
         btnInventario.setText("Consulta de inventario");
+        btnInventario.setPreferredSize(new java.awt.Dimension(200, 40));
         btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPendienteActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInventario);
-        btnInventario.setBounds(240, 180, 200, 40);
+        jPanel1.add(btnInventario);
 
         btnSeguimiento.setText("Seguimiento de órdenes");
-        getContentPane().add(btnSeguimiento);
-        btnSeguimiento.setBounds(20, 230, 200, 40);
+        btnSeguimiento.setPreferredSize(new java.awt.Dimension(200, 40));
+        jPanel1.add(btnSeguimiento);
 
         btnPreparacion.setText("Preparación y entrega");
-        getContentPane().add(btnPreparacion);
-        btnPreparacion.setBounds(240, 230, 200, 40);
+        btnPreparacion.setPreferredSize(new java.awt.Dimension(200, 40));
+        jPanel1.add(btnPreparacion);
 
         btnReportes.setText("Reportes");
+        btnReportes.setPreferredSize(new java.awt.Dimension(200, 40));
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReportes);
-        btnReportes.setBounds(20, 280, 200, 40);
+        jPanel1.add(btnReportes);
 
         btnCerrarSesion.setText("Cerrar sesión");
+        btnCerrarSesion.setPreferredSize(new java.awt.Dimension(200, 40));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCerrarSesion);
-        btnCerrarSesion.setBounds(240, 280, 200, 40);
+        jPanel1.add(btnCerrarSesion);
 
-        setSize(new java.awt.Dimension(470, 420));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRol, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(lblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(lblRol, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
@@ -168,8 +196,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_btnClientesActionPerformed
 
+    private void btnJuguetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJuguetesActionPerformed
+        abrirVentana(new VentanaJuguetes(gestionJuguetes));
+    }//GEN-LAST:event_btnJuguetesActionPerformed
+
+    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServiciosActionPerformed
+        abrirVentana(new VentanaServicios(gestionServicios));
+    }//GEN-LAST:event_btnServiciosActionPerformed
+
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        abrirVentana(new VentanaListaJuguetes(gestionJuguetes));
+    }//GEN-LAST:event_btnInventarioActionPerformed
+
     private void btnPendienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendienteActionPerformed
-        // Botones de las partes 2 y 3 (se conectan en la integración)
         JOptionPane.showMessageDialog(this, "Disponible en la integración");
     }//GEN-LAST:event_btnPendienteActionPerformed
 
@@ -182,12 +221,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         dispose();
-        Login login = new Login(gestionPersonal, gestionClientes, gestionEstadoOrden);
+        Login login = new Login(gestionPersonal, gestionClientes, gestionEstadoOrden,
+                gestionJuguetes, gestionServicios);
         login.setVisible(true);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void abrirGestionEstadoOrden() {
-        VentanaGestionEstadoOrden ventana = new VentanaGestionEstadoOrden(gestionEstadoOrden, empleado);
+        abrirVentana(new VentanaGestionEstadoOrden(gestionEstadoOrden, empleado));
+    }
+
+    private void abrirVentana(JFrame ventana) {
         ventana.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent evento) {
@@ -211,6 +254,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnReportes;
     private javax.swing.JButton btnSeguimiento;
     private javax.swing.JButton btnServicios;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBienvenida;
     private javax.swing.JLabel lblRol;
     // End of variables declaration//GEN-END:variables

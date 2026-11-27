@@ -1,4 +1,9 @@
 package retrogamingmanager;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Calendar;
 import javax.swing.SwingUtilities;
 
@@ -8,16 +13,35 @@ import javax.swing.SwingUtilities;
  */
 public class ClasePrincipal {
     public static void main(String[] args) {
+        registrarFuentes();
         GestionClientes gestionClientes = new GestionClientes();
         GestionPersonal gestionPersonal = new GestionPersonal();
+        GestionJuguetes gestionJuguetes = new GestionJuguetes();
+        GestionServicios gestionServicios = new GestionServicios();
         GestionOrdenVenta gestionOrdenVenta = new GestionOrdenVenta();
         GestionEstadoOrden gestionEstadoOrden = new GestionEstadoOrden(gestionOrdenVenta);
         
         cargarDatosDePrueba(gestionPersonal, gestionClientes, gestionOrdenVenta, gestionEstadoOrden);
         SwingUtilities.invokeLater(() -> {
-            new Login(gestionPersonal, gestionClientes, gestionEstadoOrden).setVisible(true);
+            new Login(gestionPersonal, gestionClientes, gestionEstadoOrden,
+                    gestionJuguetes, gestionServicios).setVisible(true);
         });
     }
+
+    private static void registrarFuentes() {
+        GraphicsEnvironment entorno = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        for (String peso : new String[]{"Regular", "Medium", "SemiBold"}) {
+            String recurso = "/fuentes/Poppins-" + peso + ".ttf";
+            try (InputStream archivo = ClasePrincipal.class.getResourceAsStream(recurso)) {
+                if (archivo != null) {
+                    entorno.registerFont(Font.createFont(Font.TRUETYPE_FONT, archivo));
+                }
+            } catch (FontFormatException | IOException e) {
+                System.err.println("No se pudo cargar " + recurso + ": " + e.getMessage());
+            }
+        }
+    }
+
     private static void cargarDatosDePrueba(GestionPersonal gp, GestionClientes gc,
         GestionOrdenVenta ventas, GestionEstadoOrden estados) {
         Empleados vendedor = new Empleados("22222222", "Luis", "Ramos", "vendedor", "vende123", "Vendedor");

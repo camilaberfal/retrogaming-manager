@@ -90,33 +90,36 @@ public class VentanaReportes extends javax.swing.JFrame {
         lblIngresos = new javax.swing.JLabel();
         scrollIngresos = new javax.swing.JScrollPane();
         tablaIngresos = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setTitle("Reportes gerenciales");
+        setMaximumSize(new java.awt.Dimension(700, 650));
+        setMinimumSize(new java.awt.Dimension(700, 650));
         setPreferredSize(new java.awt.Dimension(680, 570));
         setResizable(false);
         getContentPane().setLayout(null);
 
         lblDesde.setText("Desde (dd/mm/aaaa)");
         getContentPane().add(lblDesde);
-        lblDesde.setBounds(20, 16, 115, 26);
+        lblDesde.setBounds(40, 100, 115, 26);
         getContentPane().add(txtDesde);
-        txtDesde.setBounds(140, 16, 100, 26);
+        txtDesde.setBounds(160, 100, 100, 26);
 
         lblHasta.setText("Hasta (dd/mm/aaaa)");
         getContentPane().add(lblHasta);
-        lblHasta.setBounds(255, 16, 115, 26);
+        lblHasta.setBounds(270, 100, 115, 26);
         getContentPane().add(txtHasta);
-        txtHasta.setBounds(375, 16, 100, 26);
+        txtHasta.setBounds(390, 100, 100, 26);
 
         btnGenerar.setText("Generar reportes");
         btnGenerar.addActionListener(this::generarActionPerformed);
         getContentPane().add(btnGenerar);
-        btnGenerar.setBounds(490, 16, 145, 26);
+        btnGenerar.setBounds(510, 100, 145, 26);
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(this::cerrarActionPerformed);
         getContentPane().add(btnCerrar);
-        btnCerrar.setBounds(555, 490, 80, 28);
+        btnCerrar.setBounds(570, 570, 80, 28);
 
         panelReportes.setPreferredSize(new java.awt.Dimension(590, 880));
         panelReportes.setLayout(null);
@@ -224,7 +227,13 @@ public class VentanaReportes extends javax.swing.JFrame {
         scrollReportes.setViewportView(panelReportes);
 
         getContentPane().add(scrollReportes);
-        scrollReportes.setBounds(20, 54, 615, 423);
+        scrollReportes.setBounds(40, 130, 615, 423);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Reportes Gerenciales");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 20, 700, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,6 +249,7 @@ public class VentanaReportes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnGenerar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblDesde;
     private javax.swing.JLabel lblHasta;

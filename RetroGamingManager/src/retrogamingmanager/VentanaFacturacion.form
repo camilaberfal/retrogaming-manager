@@ -2,97 +2,108 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="grupoComprobante"/>
+    <Component class="javax.swing.ButtonGroup" name="grupoComprobante">
+    </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="1"/>
-    <Property name="title" type="java.lang.String" value="Facturación"/>
+    <Property name="title" type="java.lang.String" value="Facturaci&#xf3;n"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
+
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-          <Group type="103" groupAlignment="0" attributes="0">
-            <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-            <Component id="scrCuenta" min="380" pref="540" max="32767" attributes="0"/>
-            <Group type="102" attributes="0">
-              <Component id="btnBoleta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-              <Component id="btnFactura" min="-2" max="-2" attributes="0"/>
-            </Group>
-            <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="lblRuc" min="-2" max="-2" attributes="0"/>
-                <Component id="lblRazonSocial" min="-2" max="-2" attributes="0"/>
+                  <Component id="scrCuenta" min="380" pref="540" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="btnBoleta" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="18" attributes="0"/>
+                      <Component id="btnFactura" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblRuc" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRazonSocial" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtRuc" min="150" pref="220" max="32767" attributes="0"/>
+                          <Component id="txtRazonSocial" min="150" pref="220" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnCerrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnEmitir" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lblTitulo" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                <Component id="txtRuc" min="150" pref="220" max="32767" attributes="0"/>
-                <Component id="txtRazonSocial" min="150" pref="220" max="32767" attributes="0"/>
-              </Group>
-            </Group>
-            <Group type="102" alignment="1" attributes="0">
-              <Component id="btnCerrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnEmitir" min="-2" max="-2" attributes="0"/>
-            </Group>
+              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
           </Group>
-          <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-        <Group type="102" alignment="0" attributes="0">
-          <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-          <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-          <Component id="scrCuenta" min="180" pref="265" max="32767" attributes="0"/>
-          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="btnBoleta" alignment="3" min="-2" max="-2" attributes="0"/>
-            <Component id="btnFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+              <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="scrCuenta" min="180" pref="250" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnBoleta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRuc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRuc" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRazonSocial" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRazonSocial" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCerrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEmitir" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
           </Group>
-          <EmptySpace max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="lblRuc" alignment="3" min="-2" max="-2" attributes="0"/>
-            <Component id="txtRuc" alignment="3" min="-2" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="lblRazonSocial" alignment="3" min="-2" max="-2" attributes="0"/>
-            <Component id="txtRazonSocial" alignment="3" min="-2" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-            <Component id="btnCerrar" alignment="3" min="-2" max="-2" attributes="0"/>
-            <Component id="btnEmitir" alignment="3" min="-2" max="-2" attributes="0"/>
-          </Group>
-          <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-        </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblTitulo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Facturación"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Dialog" size="24" style="1"/></Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="36" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Facturaci&#xf3;n autom&#xe1;tica"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="scrCuenta">
+
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JList" name="listaCuenta">
@@ -104,9 +115,11 @@
     </Container>
     <Component class="javax.swing.JRadioButton" name="btnBoleta">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor"><ComponentRef name="grupoComprobante"/></Property>
-        <Property name="text" type="java.lang.String" value="Boleta"/>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="grupoComprobante"/>
+        </Property>
         <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Boleta"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarTipoActionPerformed"/>
@@ -114,7 +127,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="btnFactura">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor"><ComponentRef name="grupoComprobante"/></Property>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="grupoComprobante"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Factura"/>
       </Properties>
       <Events>
@@ -123,16 +138,20 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblRuc">
       <Properties>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtRuc"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="RUC"/>
-        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor"><ComponentRef name="txtRuc"/></Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRuc">
     </Component>
     <Component class="javax.swing.JLabel" name="lblRazonSocial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Razón social"/>
-        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor"><ComponentRef name="txtRazonSocial"/></Property>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtRazonSocial"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Raz&#xf3;n social"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRazonSocial">

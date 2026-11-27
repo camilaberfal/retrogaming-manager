@@ -64,7 +64,7 @@ public class VentanaListaServicios extends javax.swing.JFrame {
         tblServicios = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         tblServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -14,11 +14,15 @@ public class VentanaServicios extends javax.swing.JFrame {
      * Creates new form VentanaServicios
      */
     
-    private GestionServicios gestion;
+    private final GestionServicios gestion;
     
     public VentanaServicios() {
+        this(new GestionServicios());
+    }
+
+    public VentanaServicios(GestionServicios gestion) {
         initComponents();
-        gestion = new GestionServicios();
+        this.gestion = gestion;
     }
     
     
@@ -74,7 +78,7 @@ public class VentanaServicios extends javax.swing.JFrame {
         btnVerServicios = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblCodigo.setText("Código");
 

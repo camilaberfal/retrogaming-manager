@@ -14,12 +14,16 @@ public class VentanaJuguetes extends javax.swing.JFrame {
      * Creates new form VentanaJuguetes
      */
     
-    private GestionJuguetes gestion;
+    private final GestionJuguetes gestion;
     
     
     public VentanaJuguetes() {
+        this(new GestionJuguetes());
+    }
+
+    public VentanaJuguetes(GestionJuguetes gestion) {
         initComponents();
-        gestion = new GestionJuguetes();
+        this.gestion = gestion;
     }
 
     private Juguete obtenerDatos() {
@@ -202,7 +206,7 @@ public class VentanaJuguetes extends javax.swing.JFrame {
                         .addComponent(btnVerJuguetes)
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpiar)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
